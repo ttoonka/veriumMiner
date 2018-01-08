@@ -5,11 +5,12 @@
 #
 #
 
-FROM		ubuntu:12.10
+FROM		ubuntu:latest
 MAINTAINER	Guillaume J. Charmes <guillaume@charmes.net>
 
 RUN		apt-get update -qq
 
+RUN		apt-get install -qqy build-essential
 RUN		apt-get install -qqy automake
 RUN		apt-get install -qqy libcurl4-openssl-dev
 RUN		apt-get install -qqy git
@@ -22,4 +23,4 @@ RUN		cd cpuminer && ./configure CFLAGS="-O3"
 RUN		cd cpuminer && make
 
 WORKDIR		/cpuminer
-ENTRYPOINT	["./cpuminer"]
+ENTRYPOINT	["./minerd"]
