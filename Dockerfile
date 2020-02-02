@@ -3,9 +3,6 @@
 # run: docker run -it --rm veriumMiner:latest [ARGS]
 # ex: docker run -it --rm veriumMiner:latest --url stratum+tcp://ltc.pool.com:80 --user creack.worker1 --pass abcdef
 
-WORKDIR		/cpuminer
-ENTRYPOINT	["./minerd"]
-
 # Build
 FROM ubuntu:16.04 as builder
 
